@@ -61,13 +61,7 @@ class Dance(Performance):  # IS-A Performance: single inheritance.
 class Poetry(Performance):  # Shared parent: hierarchical inheritance.
     def duration(self):
         return 4
-    
-class Comedy(Performance):
-    def _init_(self, duo_name):
-        super()._init_(f"{duo_name}comedy duo")
-        
-    def duration(self):
-        return 2
+
 
 class ShortDance(Dance):  # Performance -> Dance -> ShortDance: multilevel.
     def duration(self):
@@ -114,6 +108,16 @@ class TalentShow:
             return f"MC {self.mc} books {performance.name}."
         return f"No slot for {performance.name}. The timetable has entered the chat."
 
+    def cancel_last(self):
+        if not self._lineup:
+            return False
+
+        last = self._lineup.pop()
+        self.clock.remaining += last.duration()
+        return True
+
+    def book(self, performance):
+        self.performance = performance
 
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
