@@ -25,6 +25,14 @@ class ShowClock:
         self.remaining = self.remaining - minutes
         return True
 
+    
+    def extend(self, minutes):
+        if minutes <= 0:
+            return False
+
+        self.remaining = self.remaining + minutes
+        return True
+
 
 # ACT 2: Every performance must tell the MC its duration.
 class Performance(ABC):
