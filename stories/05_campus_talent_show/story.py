@@ -53,7 +53,13 @@ class Dance(Performance):  # IS-A Performance: single inheritance.
 class Poetry(Performance):  # Shared parent: hierarchical inheritance.
     def duration(self):
         return 4
-
+    
+class Comedy(Performance):
+    def _init_(self, duo_name):
+        super()._init_(f"{duo_name}comedy duo")
+        
+    def duration(self):
+        return 2
 
 class ShortDance(Dance):  # Performance -> Dance -> ShortDance: multilevel.
     def duration(self):
