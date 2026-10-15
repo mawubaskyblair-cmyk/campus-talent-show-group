@@ -57,6 +57,10 @@ class Dance(Performance):  # IS-A Performance: single inheritance.
     def duration(self):
         return self.minutes  # Override the abstract method.
 
+class Comedy(Performance):
+    def duration(self):
+        return 2
+
 
 class Poetry(Performance):  # Shared parent: hierarchical inheritance.
     def duration(self):
@@ -116,7 +120,7 @@ class TalentShow:
         self.performance = performance  # Borrowed part: aggregation.
         minutes = performance.duration()  # Abstraction: MC doesn't count dance steps.
         if self.clock.reserve(minutes):
-            self._lineup.append(performance)  # Collaborating objects in a collection.
+           self._lineup.append(performance)  # Collaborating objects in a collection.
             return f"MC {self.mc} books {performance.name}."
         return f"No slot for {performance.name}. The timetable has entered the chat."
 
