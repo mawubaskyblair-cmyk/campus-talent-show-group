@@ -79,6 +79,18 @@ class AudienceWave:  # No Performance inheritance: the shared behaviour is enoug
     def describe(self):
         return "Audience wave: one minute, everybody gets to be famous."
 
+class ThankYouSpeech:
+    def __init__(self, name):
+        self.name = name
+
+    def duration(self):
+        return 1
+
+    def describe(self):
+        return (
+            f"{self.name}: one-minute thank-you speech "
+            "at UCU student talent afternoon."
+        )
 
 # ACT 4: The show HAS-A clock; it borrows and swaps performance objects.
 class TalentShow:
