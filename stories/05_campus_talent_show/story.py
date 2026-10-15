@@ -120,7 +120,7 @@ class TalentShow:
         self.performance = performance  # Borrowed part: aggregation.
         minutes = performance.duration()  # Abstraction: MC doesn't count dance steps.
         if self.clock.reserve(minutes):
-           self._lineup.append(performance)  # Collaborating objects in a collection.
+            self._lineup.append(performance)  # Collaborating objects in a collection.
             return f"MC {self.mc} books {performance.name}."
         return f"No slot for {performance.name}. The timetable has entered the chat."
 
@@ -146,8 +146,6 @@ class TalentShow:
             f"Minutes left: {self.clock.remaining}."
         )
 
-    def book(self, performance):
-        self.performance = performance
 
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
