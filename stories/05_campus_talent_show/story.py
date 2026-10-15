@@ -108,8 +108,7 @@ class TalentShow:
         self.clock.remaining += last.duration()
         return True
 
-    def book(self, performance):
-        self.performance = performance
+
 
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
