@@ -128,6 +128,20 @@ class TalentShow:
         self.clock.remaining += last.duration()
         return True
 
+    def running_order(self):
+        if not self._lineup:
+            return (
+                f"No acts booked. Acts: 0. "
+                f"Minutes left: {self.clock.remaining}."
+            )
+
+        names = ", ".join(performance.name for performance in self._lineup)
+        return (
+            f"Running order: {names}. "
+            f"Acts: {self.act_count}. "
+            f"Minutes left: {self.clock.remaining}."
+        )
+
     def book(self, performance):
         self.performance = performance
 
