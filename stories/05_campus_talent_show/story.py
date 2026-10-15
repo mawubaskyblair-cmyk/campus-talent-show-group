@@ -25,6 +25,14 @@ class ShowClock:
         self.remaining = self.remaining - minutes
         return True
 
+    
+    def extend(self, minutes):
+        if minutes <= 0:
+            return False
+
+        self.remaining = self.remaining + minutes
+        return True
+
 
 # ACT 2: Every performance must tell the MC its duration.
 class Performance(ABC):
@@ -112,6 +120,16 @@ class TalentShow:
             return f"MC {self.mc} books {performance.name}."
         return f"No slot for {performance.name}. The timetable has entered the chat."
 
+    def cancel_last(self):
+        if not self._lineup:
+            return False
+
+        last = self._lineup.pop()
+        self.clock.remaining += last.duration()
+        return True
+
+    def book(self, performance):
+        self.performance = performance
 
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
