@@ -1,6 +1,6 @@
 # Campus Talent Show Group Work
 
-## Repository:[`mawubaskyblair-cmyk/campus-talent-show-group`](https://github.com)
+## Repository:[`mawubaskyblair-cmyk/campus-talent-show-group`](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group)
 
 
 | Member | Access number | Extension | Branch | Pull request |
