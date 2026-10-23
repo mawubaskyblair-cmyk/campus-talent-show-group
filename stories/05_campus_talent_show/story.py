@@ -203,6 +203,7 @@ class StrictTalentShow(TalentShow):
 
         return f"MC {self.mc} books {performance.name}."
 
+
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
         print(performance.describe())  # One call, many versions: polymorphism.
