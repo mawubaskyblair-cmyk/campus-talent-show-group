@@ -4,17 +4,16 @@
 - Story: Campus Talent Show
 - Group fork URL: https://github.com/mawubaskyblair-cmyk/campus-talent-show-group
 - Final branch: `main`
-- Deadline: Thursday, 15 October 2026
+- Deadline: Wednesday, 21 October 2026
 
-A five-person group completes five different extensions.
+We selected later-topic options A2, A4, and A5. 
 
-| Member name | University access number | GitHub username | Extension number | Personal branch | Merged PR link |
-|---|---|---|---|---|---|
-| Blair | b33217 | mawubaskyblair-cmyk | Extension 1: Comedy duo | `blair-b33217` | https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/1 |
-| Lawrence | b33232 | arube371 | Extension 2: The MC gets extra time | `lawrence-b33232` | https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/2 |
-| Victor | b30887 | kabuyevictor2-arch | Extension 4: Cancel the last booking | `victor-b30887` | https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/3 |
-| Samuel | b33227 | Samuel-ahumuza | Extension 3: Thank-you speech | `samuel-b33227` | https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/4 |
-| Daphine | b35639 | kasanadaphine62-glitch | Extension 5: Running order | `daphine-b35639` | https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/5 |
+| Member name | University access number | GitHub username | Option | Contribution | Personal branch | Merged PR link |
+|---|---|---|---|---|---|---|
+| Samuel | b33227 | Samuel-ahumuza | A2 | Exceptions and Safe Booking | `samuel-b33227-a2` | [#6](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/6) |
+| Lawrence | b33232 | arube371 | A2 | Strict Booking Tests | `lawrence-b33232` | [#2](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/2) |
+| Blair | b33217 | mawubaskyblair-cmyk | A4 | Factory and Tests | `blair-b33217` | [#7](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/7) |
+| Daphine | b35639 | kasanadaphine62-glitch | A5 | Running Order Tests | `daphine-b35639` | [#8](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/8) |
 
 ## Run our work
 
@@ -22,18 +21,6 @@ Run these commands from the repository root on Windows:
 
 ```sh
 py -3 stories/05_campus_talent_show/story.py
-py -3 stories/05_campus_talent_show/demo_blair_b33217.py
-py -3 stories/05_campus_talent_show/demo_lawrence_b33232.py
-py -3 stories/05_campus_talent_show/demo_victor_b30887.py
-py -3 stories/05_campus_talent_show/demo_samuel_b33227.py
-py -3 stories/05_campus_talent_show/demo_daphine_b35639.py
-```
-
-## Final group check
-
-- [x] Every chosen feature works on `main`.
-- [x] The original story still runs and its expected output is unchanged.
-- [x] Every member's demo runs from `main`.
-- [x] Every member authored a PR that is now merged.
-- [x] Every member left a useful review comment on every other member's PR before merge.
-- [x] The group has checked that all the extensions work together.
+py -3 stories/05_campus_talent_show/demo_blair_b33217_a4.py
+py -3 stories/05_campus_talent_show/demo_samuel_b33227_a2.py
+py -3 -m unittest discover -s stories/05_campus_talent_show -p "test_*.py"
