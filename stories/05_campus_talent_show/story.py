@@ -3,6 +3,16 @@ Run: python3 story.py. All acts and timings are fictional classroom examples.
 """
 from abc import ABC, abstractmethod
 
+class ShowChoiceError(Exception):
+    """The selected object is not a usable talent-show act."""
+
+
+class ShowRequestError(Exception):
+    """The act contains an invalid booking request."""
+
+
+class ShowResourceError(Exception):
+    """The show does not have enough time for a valid act."""
 
 # ACT 1: Time is a resource with a rule: don't schedule negative minutes.
 class ShowClock:
@@ -145,7 +155,53 @@ class TalentShow:
             f"Acts: {self.act_count}. "
             f"Minutes left: {self.clock.remaining}."
         )
+class StrictTalentShow(TalentShow):
+    """TalentShow variant that explains rejected bookings with exceptions."""
 
+    def safe_book(self, performance):
+        if performance is None:
+            raise ShowChoiceError(
+                "The selected choice cannot be None."
+            )
+
+        if not hasattr(performance, "name"):
+            raise ShowChoiceError(
+                "The selected choice must have a name."
+            )
+
+        duration_method = getattr(performance, "duration", None)
+        if not callable(duration_method):
+            raise ShowChoiceError(
+                "The selected choice must provide duration()."
+            )
+
+        try:
+            minutes = duration_method()
+        except Exception as error:
+            raise ShowRequestError(
+                "The act duration could not be calculated."
+            ) from error
+
+        if (
+            isinstance(minutes, bool)
+            or not isinstance(minutes, (int, float))
+            or minutes <= 0
+        ):
+            raise ShowRequestError(
+                "An act duration must be a positive number."
+            )
+
+        if minutes > self.clock.remaining:
+            raise ShowResourceError(
+                f"The act needs {minutes} minutes, but only "
+                f"{self.clock.remaining} remain."
+            )
+
+        self.performance = performance
+        self.clock.reserve(minutes)
+        self._lineup.append(performance)
+
+        return f"MC {self.mc} books {performance.name}."
 
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
