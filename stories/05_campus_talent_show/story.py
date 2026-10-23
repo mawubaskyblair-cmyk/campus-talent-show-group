@@ -142,8 +142,6 @@ class TalentShow:
             f"Minutes left: {self.clock.remaining}."
         )
 
-    def book(self, performance):
-        self.performance = performance
 
 def audition(performances):  # Week 1's function, parameters, list, and loop.
     for performance in performances:
