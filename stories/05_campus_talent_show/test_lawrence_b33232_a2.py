@@ -63,15 +63,14 @@ class TestLawrenceA2Exceptions(unittest.TestCase):
         long_choice = FixedChoice("Later act", 10)
 
         show.safe_book(valid_choice)
-
-        minutes_before_failure = show.clock.remaining
-        acts_before_failure = show.act_count
+        minutes_before = show.clock.remaining
+        acts_before = show.act_count
 
         with self.assertRaises(ShowResourceError):
             show.safe_book(long_choice)
 
-        self.assertEqual(show.clock.remaining, minutes_before_failure)
-        self.assertEqual(show.act_count, acts_before_failure)
+        self.assertEqual(show.clock.remaining, minutes_before)
+        self.assertEqual(show.act_count, acts_before)
 
     def test_choice_without_name_raises_show_choice_error(self):
         show = StrictTalentShow("Lawrence", 10)
