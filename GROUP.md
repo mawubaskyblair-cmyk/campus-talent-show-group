@@ -28,6 +28,7 @@ We selected options A2, A4, and A5.
 | Lawrence | b33232 | arube371 | A2 | Strict Booking Tests | `lawrence-b33232` | [#2](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/2) |
 | Blair | b33217 | mawubaskyblair-cmyk | A4 | Factory and Tests | `blair-b33217` | [#7](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/7) |
 | Daphine | b35639 | kasanadaphine62-glitch | A5 | Running Order Tests | `daphine-b35639` | [#8](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/8) |
+| Victor | b30887 | kabuyevictor2-arch | A2 / A4 | Code Review and Merge Fixes | `victor-b30887` | [#3](https://github.com/mawubaskyblair-cmyk/campus-talent-show-group/pull/3) |
 
 ## Run our work
 
